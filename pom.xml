@@ -428,6 +428,11 @@
 			<artifactId>httpasyncclient</artifactId>
 			<version>4.1</version>
 		</dependency>
+		<dependency>
+			<groupId>com.samskivert</groupId>
+			<artifactId>jmustache</artifactId>
+			<version>1.13</version>
+		</dependency>
 		<!-- 
 		<dependency>
 		    <groupId>com.pretty-tools</groupId>
