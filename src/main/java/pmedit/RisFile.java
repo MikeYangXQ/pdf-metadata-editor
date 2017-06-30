@@ -196,7 +196,7 @@ public class RisFile {
 	public static void main(final String[] args) {
 		try {
 			RisFile risFile = RisFile.load(args[0]);
-			String template = "{{#A_}}{{^-first}}; {{/-first}}|{{this}}|{{/A_}}";
+			String template = "{{#A_}}{{^-first}}\n{{/-first}}{{this}}{{/A_}}";
 			
 			System.out.println(Mustache.compiler().compile(template).execute(risFile));
 		} catch (FileNotFoundException e) {

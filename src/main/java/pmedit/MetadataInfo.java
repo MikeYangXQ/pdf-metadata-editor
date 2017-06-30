@@ -1204,7 +1204,7 @@ public class MetadataInfo {
 			if( o == null){
 				Object otherVal = other.get(fieldName);
 				if (otherVal instanceof String) {
-					TemplateString ts = new TemplateString((String)otherVal);
+					TemplateStringSimple ts = new TemplateStringSimple((String)otherVal);
 					otherVal = ts.process(expandInfo);
 				}
 				set(fieldName, otherVal);

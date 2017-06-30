@@ -163,7 +163,7 @@ public class PDFMetadataEditWindow extends JFrame{
 			if(renameTemplate == null){
 				return;
 			}
-			TemplateString ts = new TemplateString(renameTemplate); 
+			TemplateStringSimple ts = new TemplateStringSimple(renameTemplate); 
 			String toName = ts.process(metadataInfo);
 			String toDir= pdfFile.getParent();
 			File to = new File(toDir,toName);

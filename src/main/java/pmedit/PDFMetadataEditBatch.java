@@ -141,7 +141,7 @@ public class PDFMetadataEditBatch {
 			status.addError("*", "Rename template not configured");
 			return;
 		}		
-		final TemplateString ts = new TemplateString(template);
+		final TemplateStringSimple ts = new TemplateStringSimple(template);
 		
 		forFiles(files, new FileAction() {
 			

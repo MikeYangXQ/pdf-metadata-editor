@@ -147,7 +147,7 @@ public class BatchParametersRename extends BatchParametersWindow {
 	
 	public void showPreview(String template) {
 		parameters.renameTemplate = template;
-		TemplateString ts = new TemplateString(template);
+		TemplateStringSimple ts = new TemplateStringSimple(template);
 		getPreviewLabel().setText("Preview: " + ts.process(MetadataInfo.getSampleMetadata()));
 	}
 

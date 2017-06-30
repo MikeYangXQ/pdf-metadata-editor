@@ -278,6 +278,39 @@ public class PreferencesWindow extends JDialog {
 		defaultMetadataPane = new MetadataEditPane();
 
 		panelDefaults.add(defaultMetadataPane.tabbedaPane, gbc_lblDefineHereDefault1);
+		
+		JPanel panelRis = new JPanel();
+		tabbedPane.addTab("RIS", null, panelRis, null);
+		GridBagLayout gbl_panelRis = new GridBagLayout();
+		gbl_panelRis.columnWidths = new int[]{555, 0};
+		gbl_panelRis.rowHeights = new int[]{32, 100, 0, 0};
+		gbl_panelRis.columnWeights = new double[]{1.0, Double.MIN_VALUE};
+		gbl_panelRis.rowWeights = new double[]{0.0, 1.0, 0.0, Double.MIN_VALUE};
+		panelRis.setLayout(gbl_panelRis);
+		
+		JLabel label = new JLabel("Defne here the desired mapping between RIS and PDF fields ");
+		GridBagConstraints gbc_label = new GridBagConstraints();
+		gbc_label.weightx = 1.0;
+		gbc_label.fill = GridBagConstraints.HORIZONTAL;
+		gbc_label.anchor = GridBagConstraints.NORTH;
+		gbc_label.insets = new Insets(5, 5, 5, 0);
+		gbc_label.gridx = 0;
+		gbc_label.gridy = 0;
+		panelRis.add(label, gbc_label);
+		
+		JTabbedPane tabbedToFromRis = new JTabbedPane(JTabbedPane.TOP);
+		GridBagConstraints gbc_tabbedToFromRis = new GridBagConstraints();
+		gbc_tabbedToFromRis.insets = new Insets(0, 0, 5, 0);
+		gbc_tabbedToFromRis.fill = GridBagConstraints.BOTH;
+		gbc_tabbedToFromRis.gridx = 0;
+		gbc_tabbedToFromRis.gridy = 1;
+		panelRis.add(tabbedToFromRis, gbc_tabbedToFromRis);
+		
+		JPanel panelPDFFromRis = new JPanel();
+		tabbedToFromRis.addTab("Pdf from RIS", null, panelPDFFromRis, null);
+		
+		JPanel panel_4 = new JPanel();
+		tabbedToFromRis.addTab("RIS from Pdf", null, panel_4, null);
 
 		JPanel panelOsIntegration = new JPanel();
 		tabbedPane.addTab("Os Integration", null, panelOsIntegration, null);
@@ -653,7 +686,7 @@ public class PreferencesWindow extends JDialog {
 
 	public void showPreview(String template) {
 		renameTemplate = template;
-		TemplateString ts = new TemplateString(template);
+		TemplateStringSimple ts = new TemplateStringSimple(template);
 
 		getPreviewLabel().setText("Preview:" + ts.process(MetadataInfo.getSampleMetadata()));
 	}
